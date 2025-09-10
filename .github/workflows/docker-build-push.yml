@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t oluwaloseye/ecommerce-site:latest .
+        run: docker build -t oluwaloseye/ecommerce-site:latest "./E-COMMERCE WEBSITE"
 
       - name: Push Docker image
         run: docker push oluwaloseye/ecommerce-site:latest
