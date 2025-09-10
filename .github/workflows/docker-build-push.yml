@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main   # Run workflow only on pushes to main branch
+      - main   # workflow triggers when you push to main branch
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t oluwaloseye/ecommerce-site:latest .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/ecommerce-site:latest .
 
       - name: Push Docker image
-        run: docker push oluwaloseye/ecommerce-site:latest
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/ecommerce-site:latest
