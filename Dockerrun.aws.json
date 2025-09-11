@@ -1,12 +1,17 @@
 {
-  "AWSEBDockerrunVersion": 1,
-  "Image": {
-    "Name": "oluwaloseye/ecommerce-site:latest",
-    "Update": "true"
-  },
-  "Ports": [
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
     {
-      "ContainerPort": "80"
+      "name": "ecommerce-site",
+      "image": "dockerhubusername/imagename:latest",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ]
     }
   ]
 }
